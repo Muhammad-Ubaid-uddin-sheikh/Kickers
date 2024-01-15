@@ -17,11 +17,10 @@ const App = ({navigation}) => {
 
     <View style={styles.form}>
       <StatusBar  barStyle="dark-content"/>
-      <Text style={styles.heading}>Log in</Text>
+      <Text style={styles.heading}>Inicia sesión</Text>
       {/* <Text style={styles.headingSub}>Court Owner </Text> */}
       <Text style={styles.paragraphs}>
-        Manage your account, check notifications,
-        comment on videos, and more
+      Reserva canchas, encuentra partidos, conéctate con la comunidad y más.
       </Text>
       <View style={styles.inputContainer}>
         <TextInput
@@ -36,7 +35,7 @@ const App = ({navigation}) => {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Password"
+          placeholder="Contraseña"
           placeholderTextColor="rgba(33, 33, 33, 0.60)"
           secureTextEntry={!isPasswordVisible}
           value={password}
@@ -48,11 +47,11 @@ const App = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      <Button text='Log In' Link={ handleNavigate } />
-      <Text style={styles.informationText}>Forgot Password?</Text>
+      <Button text='Inicia sesión' Link={ handleNavigate } />
+      <Text style={styles.informationText}>¿Olvidaste tu contraseña ?</Text>
       <View style={styles.SinupText}>
         <TouchableOpacity style={styles.linkText}>
-          <Text style={styles.informationText}> Don’t have an account? <Text style={styles.TextLink} onPress={() => navigation.navigate('SignupScreen')} >Sign Up Today!</Text> </Text>
+          <Text style={styles.informationText}> ¿No tienes una cuenta? <Text style={styles.TextLink} onPress={() => navigation.navigate('SignupScreen')} >Regístrate hoy!</Text> </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -75,13 +74,13 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: '#408639',
     fontWeight: '600',
-    fontFamily: 'WorkSans-Regular',
+    fontFamily: 'Satoshi-Medium',
     letterSpacing: 0.4
   },
   SinupText: {
     position: 'absolute',
     bottom: 25,
-    fontFamily: 'WorkSans-Regular',
+    fontFamily: 'Satoshi-Medium',
     textAlign: 'center',
 
   },
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
     width: 350,
     lineHeight: 25,
     marginTop: 6,
-    fontFamily: 'WorkSans-Regular'
+    fontFamily: 'Satoshi-Medium'
   },
   inputContainer: {
     position: 'relative',
@@ -147,7 +146,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOpacity: 1,
     color: '#212121',
-    fontFamily: 'WorkSans-Regular',
+    fontFamily: 'Satoshi-Medium',
     backgroundColor: 'rgba(64, 134, 57, 0.05)'
   },
   iconContainer: {
@@ -174,7 +173,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 0.9,
     marginTop: 15,
-    fontFamily: 'WorkSans-Regular'
+    fontFamily: 'Satoshi-Medium'
   },
   button: {
     backgroundColor: '#212121',
@@ -183,7 +182,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderColor: '#61646B',
     borderWidth: 0.5, // Set the border width
-    fontFamily: 'Work Sans',
+   fontFamily: 'Satoshi-Regular',
     color: '#EFEFF0',
     marginLeft: 20,
     marginRight: 28,

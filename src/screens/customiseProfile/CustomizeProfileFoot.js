@@ -25,7 +25,7 @@ const CustomizeProfile = ({navigation}) => {
             <StatusBar backgroundColor={'white'} />
             <View style={styles.MainContainer}>
                 <ColoredLine flex={1.8} />
-                <Text style={styles.MainHeading} >Which foot do you play with?</Text>
+                <Text style={styles.MainHeading} >¿ Cuál es tu pie</Text>
                 <View style={styles.ShoeContainer}>
                     <View style={styles.row}>
                         <View style={styles.ShoeCon}>
@@ -65,7 +65,7 @@ const CustomizeProfile = ({navigation}) => {
 
                 </View>
                 <View style={styles.nextButton}>
-    <Button Link={handleNavigate} text="Next"/>
+    <Button Link={handleNavigate} text="Siguiente"/>
                   
                 </View>
             </View>
@@ -85,7 +85,7 @@ bottom:320
         color: '#61646B',
         marginLeft: 38,
         marginTop: 30,
-        fontFamily: 'WorkSans-Medium'
+       fontFamily: 'Satoshi-Medium'
     },
     ShoeCon: {
         textAlign: 'center',

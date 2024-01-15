@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         paddingBottom: 10,
         marginBottom: 28,
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
     },
     buttonGoole: {
         backgroundColor: 'white',
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         width: 338,
         borderColor: '#AFB1B6',
         borderWidth: 0.5, // Set the border width
-        fontFamily: 'Work Sans',
+       fontFamily: 'Satoshi-Regular',
         marginLeft: 25,
         marginRight: 25
     },
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
         textAlign: 'center',
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
 
     },
     TextLink: {
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#61646B',
         letterSpacing: 1,
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
     },
     inputContainer: {
         position: 'relative',
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         shadowOpacity: 1,
         color: '#212121',
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         backgroundColor: 'rgba(64, 134, 57, 0.05)'
     },
     iconContainer: {
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
         marginTop: 8,
         paddingBottom: 30,
-        fontFamily: 'WorkSans-Medium'
+       fontFamily: 'Satoshi-Medium'
     },
     informationTextAccont: {
         fontSize: 15,
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         letterSpacing: 0.2,
         marginTop: 8,
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
     },
     headingSub: {
         fontSize: 18,

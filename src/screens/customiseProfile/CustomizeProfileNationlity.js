@@ -62,7 +62,7 @@ const CustomizeProfile = ({ navigation }) => {
 
             <View style={styles.MainContainer}>
                 <ColoredLine flex={0.5} />
-                <Text style={styles.MainHeading} >Select Country</Text>
+                <Text style={styles.MainHeading} >Selecciona tu país</Text>
                 {/* <CountrySelection/> */}
                 <View style={{ marginBottom: 150 }}>
                     {/* <CountrySelect/> */}
@@ -71,7 +71,7 @@ const CustomizeProfile = ({ navigation }) => {
                             <Icons name='search' style={styles.Searchicon} size={30} />
                             <TextInput
                                 style={styles.input}
-                                placeholder="Search for a country"
+                                placeholder="Buscar un país"
                                 value={searchText}
                                 onChangeText={handleSearch}
                                 placeholderTextColor="rgba(33, 33, 33, 0.60)"
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         shadowOpacity: 1,
         color: '#212121',
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         backgroundColor: 'rgba(64, 134, 57, 0.05)',
 
     },
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         shadowOpacity: 1,
         color: '#212121',
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         backgroundColor: 'rgba(64, 134, 57, 0.05)',
     },
     flag: {

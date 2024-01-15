@@ -48,7 +48,7 @@ const CustomizeProfile = ({ navigation }) => {
             <StatusBar backgroundColor={'white'} />
             <ColoredLine flex={4} />
             <View style={styles.MainContainer}>
-                <Text style={styles.MainHeading} >Which position do you play?</Text>
+                <Text style={styles.MainHeading} >¿ Qué posición juegas?</Text>
                 <Image source={selectedImage} style={styles.image} />
 
                 {/* Text 1 */}
@@ -58,7 +58,7 @@ const CustomizeProfile = ({ navigation }) => {
                             styles.buttonSelect,
                             selectedText === 'Attack' && styles.selectedTextTouchable,
                         ]} onPress={() => handleTextClick('attackImage', 'Attack')}>
-                            <Text style={styles.textSelectProfile}>Attack</Text>
+                            <Text style={styles.textSelectProfile}>Delantero</Text>
                         </TouchableOpacity>
                     </View>
                     {/* Text 2 */}
@@ -67,7 +67,7 @@ const CustomizeProfile = ({ navigation }) => {
                             styles.buttonSelect,
                             selectedText === 'Defend' && styles.selectedTextTouchable,
                         ]} onPress={() => handleTextClick('defendImage', 'Defend')}>
-                            <Text style={styles.textSelectProfile}>Defend</Text>
+                            <Text style={styles.textSelectProfile}>Defensa</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -78,7 +78,7 @@ const CustomizeProfile = ({ navigation }) => {
                             styles.buttonSelect,
                             selectedText === 'Midfield' && styles.selectedTextTouchable,
                         ]} onPress={() => handleTextClick('midfieldImage', 'Midfield')}>
-                            <Text style={styles.textSelectProfile}>Midfield</Text>
+                            <Text style={styles.textSelectProfile}>Medio</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.colm}>
@@ -87,13 +87,13 @@ const CustomizeProfile = ({ navigation }) => {
                             styles.buttonSelect,
                             selectedText === 'Goalkeeper' && styles.selectedTextTouchable,
                         ]} onPress={() => handleTextClick('goalkeeperImage', 'Goalkeeper')}>
-                            <Text style={styles.textSelectProfile}>Goalkeeper</Text>
+                            <Text style={styles.textSelectProfile}>Portero</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
 
                 <View style={styles.nextButton}>
-                    <Button text='Next' Link={handleNavigate} />
+                    <Button text='Siguiente' Link={handleNavigate} />
 
                 </View>
             </View>
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 24,
         color: '#61646B',
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
     }
 });
 

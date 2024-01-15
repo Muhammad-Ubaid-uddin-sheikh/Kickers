@@ -73,13 +73,13 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: '#408639',
     fontWeight: '600',
-    fontFamily: 'WorkSans-Regular',
+    fontFamily: 'Satoshi-Medium',
     letterSpacing: 0.4
   },
   SinupText: {
     position: 'absolute',
     bottom: 25,
-    fontFamily: 'WorkSans-Regular',
+    fontFamily: 'Satoshi-Medium',
     textAlign: 'center',
 
   },
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     width: 350,
     lineHeight: 25,
     marginTop: 6,
-    fontFamily: 'WorkSans-Regular'
+    fontFamily: 'Satoshi-Medium'
   },
   inputContainer: {
     position: 'relative',
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOpacity: 1,
     color: '#212121',
-    fontFamily: 'WorkSans-Regular',
+    fontFamily: 'Satoshi-Medium',
     backgroundColor: 'rgba(64, 134, 57, 0.05)'
   },
   iconContainer: {
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 0.9,
     marginTop: 15,
-    fontFamily: 'WorkSans-Regular'
+    fontFamily: 'Satoshi-Medium'
   },
   button: {
     backgroundColor: '#212121',
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderColor: '#61646B',
     borderWidth: 0.5, // Set the border width
-    fontFamily: 'Work Sans',
+   fontFamily: 'Satoshi-Regular',
     color: '#EFEFF0',
     marginLeft: 20,
     marginRight: 28,

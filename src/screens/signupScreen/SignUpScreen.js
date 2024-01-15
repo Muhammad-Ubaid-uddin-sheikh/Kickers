@@ -7,9 +7,31 @@ import NewIcons from 'react-native-vector-icons/Fontisto'
 import FaIcon from 'react-native-vector-icons/MaterialIcons'
 import Button from '../../components/Button';
 import { Fonts } from '../style';
+import axios from 'axios';
 const Sigup = ({ navigation }) => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [mobileNumber, setMobileNumber] = useState('');
+    const [Feildpassword, setFeildpassword] = useState('');
+
+
     const handleNavigate = () => {
-        navigation.navigate('CustomizeProfile');
+       
+       
+        // navigation.navigate('CustomizeProfile');
+
+        const userdata= {
+            name: name,
+            email,
+            mobileNumber,
+            Feildpassword
+        };
+        axios.post("http://192.168.100.5:5001/register",userdata)
+        .then(res =>console.log(res.data))
+        .catch(e => console.log(e))
+
+       
     }
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
@@ -46,15 +68,17 @@ const Sigup = ({ navigation }) => {
     return (
         <ScrollView style={styles.form} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
             
-            <Text style={styles.heading}>Sign Up</Text>
+            <Text style={styles.heading}>Registrate</Text>
             {/* <Text style={styles.headingSub}>Court Owner </Text> */}
 
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Full Name"
+                    placeholder="Nombre"
                     placeholderTextColor="rgba(33, 33, 33, 0.60)"
-                    letterSpacing={0.6}
+                    letterSpacing={0.1}
+                    value={name}
+                    onChangeText={(text) => setName(text)}
                 />
 
 
@@ -65,17 +89,21 @@ const Sigup = ({ navigation }) => {
                     placeholder="Email"
                     keyboardType="email-address"
                     placeholderTextColor="rgba(33, 33, 33, 0.60)"
-                    letterSpacing={0.6}
+                    letterSpacing={0.1}
+                    value={email}
+        onChangeText={(text) => setEmail(text)}
                 />
 
             </View>
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Username"
+                    placeholder="Nombre de usuario"
                     keyboardType="default"
                     placeholderTextColor="rgba(33, 33, 33, 0.60)"
-                    letterSpacing={0.6}
+                    letterSpacing={0.1}
+                    value={mobileNumber}
+        onChangeText={(text) => setMobileNumber(text)}
                 />
                 <Icons name='check' style={styles.eyeIcon} size={17} />
             </View>
@@ -83,11 +111,11 @@ const Sigup = ({ navigation }) => {
 
                 <TextInput
                     style={styles.input}
-                    placeholder="Date of Birth"
+                    placeholder="Fecha de nacimiento"
                     value={selectedDate}
                     onFocus={showDatePicker}
-                    letterSpacing={0.6}
-                    placeholderTextColor="#AFB1B6"
+                    letterSpacing={0.1}
+                    placeholderTextColor="rgba(33, 33, 33, 0.60)"
                 />
                 {/* <DateTimePickerModal
                     isVisible={isDatePickerVisible}
@@ -101,12 +129,14 @@ const Sigup = ({ navigation }) => {
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     placeholderTextColor="rgba(33, 33, 33, 0.60)"
                     secureTextEntry={!isPasswordVisible}
-                    value={password}
-                    letterSpacing={0.6}
-                    onChangeText={(text) => setPassword(text)}
+                    // value={password}
+                    value={Feildpassword}
+                    onChangeText={(text) => setFeildpassword(text)}
+                    letterSpacing={0.1}
+                    // onChangeText={(text) => setPassword(text)}
                 />
                 <TouchableOpacity style={styles.eyeIcon} onPress={togglePasswordVisibility}>
                     <Text style={styles.eyeText}>{isPasswordVisible ? <Icon name="eye" style={styles.eyeIcon} size={17} /> : <Icon name="eye-slash" style={styles.eyeIcon} size={17} />}</Text>
@@ -115,33 +145,33 @@ const Sigup = ({ navigation }) => {
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Re Enter Password"
+                    placeholder="Confirma tu contraseña"
                     placeholderTextColor="rgba(33, 33, 33, 0.60)"
                     secureTextEntry={!isRePasswordVisible}
                     value={RePassword}
-                    letterSpacing={0.6}
+                    letterSpacing={0.1}
                     onChangeText={(text) => setRePassword(text)}
                 />
                 <TouchableOpacity style={styles.eyeIcon} onPress={toggleRePasswordVisibility}>
                     <Text style={styles.eyeText}>{isRePasswordVisible ? <Icon name="eye" style={styles.eyeIcon} size={17} /> : <Icon name="eye-slash" style={styles.eyeIcon} size={17} />}</Text>
                 </TouchableOpacity>
             </View>
-            <Button text="Sign Up " Link={handleNavigate} />
+            <Button text="Registrate " Link={() => handleNavigate()} />
 
-            <Text style={styles.informationText}>By signing up you agree to our <Text style={{ color: '#408639' }}>Terms & Conditions.</Text></Text>
+            <Text style={styles.informationText}>Al registrarte aceptas nuestros <Text style={{ color: '#408639' }}>términos y condiciones</Text></Text>
             <View style={styles.SinupText}>
 
                 <TouchableOpacity style={styles.buttonGoole}>
                     <Image source={require('../../assets/google.png')} style={styles.image} />
                     {/* <GooIcon name='google' style={styles.googleICon} color='rgb(52, 168, 90)' size={25}  /> */}
-                    <Text style={styles.buttonTextGoogle}>Continue with google</Text>
+                    <Text style={styles.buttonTextGoogle}>Continuar con Google</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonGoole}>
                     <FaIcon name='facebook' style={styles.googleICon} color='#4267B2' size={25} />
-                    <Text style={styles.buttonTextGoogle} >Continue With Facebook</Text>
+                    <Text style={styles.buttonTextGoogle} >Continuar con Facebook</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.linkText}>
-                    <Text style={styles.informationTextAccont}>Already have an account?  <Text style={styles.TextLink} onPress={() => navigation.navigate('LoginScreen')} >Sign In!</Text> </Text>
+                    <Text style={styles.informationTextAccont}>¿Ya tienes una cuenta? <Text style={styles.TextLink} onPress={() => navigation.navigate('LoginScreen')} >Inicia sesión!</Text> </Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
@@ -153,7 +183,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         paddingBottom: 10,
         marginBottom: 28,
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Regular'
     },
     buttonGoole: {
         backgroundColor: 'white',
@@ -163,7 +193,7 @@ const styles = StyleSheet.create({
         width: 338,
         borderColor: '#AFB1B6',
         borderWidth: 0.5, // Set the border width
-        fontFamily: 'Work Sans',
+       fontFamily: 'Satoshi-Regular',
         marginLeft: 25,
         marginRight: 25
     },
@@ -172,7 +202,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
         textAlign: 'center',
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Regular'
 
     },
     TextLink: {
@@ -223,7 +253,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#61646B',
         letterSpacing: 1,
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
     },
     inputContainer: {
         position: 'relative',
@@ -247,7 +277,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         shadowOpacity: 1,
         color: '#212121',
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         backgroundColor: 'rgba(64, 134, 57, 0.05)'
     },
     iconContainer: {
@@ -281,7 +311,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.2,
         marginTop: 8,
         paddingBottom: 30,
-        fontFamily: 'WorkSans-Medium'
+       fontFamily: 'Satoshi-Medium'
     },
     informationTextAccont: {
         fontSize: 15,
@@ -290,7 +320,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         letterSpacing: 0.2,
         marginTop: 8,
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
     },
     headingSub: {
         fontSize: 18,

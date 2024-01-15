@@ -29,14 +29,14 @@ const styles = StyleSheet.create({
         color:'#959595',
         letterSpacing:0.2,
         textAlign:'center',
-        fontFamily:'WorkSans-Medium',
+        fontFamily: 'Satoshi-Medium',
       },
       avatarNameEDit:{
         fontSize:8,
         color:'#414141',
         letterSpacing:0.2,
         textAlign:'center',
-        fontFamily:'WorkSans-Medium',
+        fontFamily: 'Satoshi-Medium',
       }
 })
 export default AvatarPlayer

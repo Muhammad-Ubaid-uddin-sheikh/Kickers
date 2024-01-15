@@ -1,7 +1,5 @@
 import React from 'react';
 import { Text, View, StatusBar, StyleSheet, Image, ScrollView} from 'react-native'
-import { Fonts } from '../style';
-import Button from '../../components/Button';
 // import VerticalSlider from './VerticalSlides';
 import CheckPlayer from '../../components/CustomButton'
 import ButtonEditDashboard from '../../components/ButtonEditDashboard'
@@ -21,13 +19,14 @@ const Setting = ({navigation}) => {
                         <View style={styles.row}>
                             
                             <View style={styles.ShoeCon}>
-                                <Image source={require('../../assets/profile.jpg')} style={{ width: 100, height: 100,objectFit:'cover',borderRadius:100 }} />
+                            <ImageEdit/>
                             </View>
-                            <View style={styles.ShoeCon}>
-                                <Text style={styles.textPoints} >Find A Match</Text>
+                            <View style={styles.ShoeConText} >
+                                <Text style={styles.textPoints} >Jake Garcia</Text>
+                                <Text style={styles.paragraph} >Disponible</Text>
                             </View>
                         </View>
-                        {/* <ImageEdit/> */}
+                        
                     </View>
                     {/* <Text style={styles.paragraphsHeading}>
                     Matches happening near you 
@@ -35,14 +34,16 @@ const Setting = ({navigation}) => {
          </View>
     <View style={styles.buttonContainer}>
         {/* <ButtonEditDashboard Link={handlePrefrences} /> */}
-        <CheckPlayer NameFont="account" TextButton="Editar perfil" />
-        <CheckPlayer NameFont="bell" TextButton="Check Player Leaderboard" />
+        <ButtonEditDashboard TextButton="Editar perfil" FontName="person-outline" Link={()=>navigation.navigate('EditProfile')}/>
+        <ButtonEditDashboard TextButton="Pago" FontName="card-outline" Link={()=>navigation.navigate('Pago')}/>
         {/* <CheckPlayer NameFont="log-out-outline" TextButton="Check Player Leaderboardsss" /> */}
         {/* <ButtonEditDashboard TextButton="Check Player Leaderboard" FontName="log-out-outline"/> */}
-        {/* <CheckPlayer NameFont="bell" TextButton="Check Player Leaderboard" />
-        <CheckPlayer NameFont="log-out-outline" TextButton="Check Player Leaderboard" />
-        <ButtonEditDashboard TextButton="Check Player Leaderboard" FontName="log-out-outline"/>
-         <ButtonEditDashboard TextButton="Check Player Leaderboard" FontName="wallet-outline"/> */}
+        {/* {/* <CheckPlayer NameFont="bell" TextButton="Check Player Leaderboard" /> */}
+        {/* <CheckPlayer NameFont="log-out-outline" TextButton="Check Player Leaderboard" /> */}
+        <CheckPlayer NameFont="bell-outline" TextButton="Notificaciones" Link={()=>navigation.navigate('Notification')} />
+        <ButtonEditDashboard TextButton="Privacidad" FontName="shield-checkmark-outline" Link={()=>navigation.navigate('Privacy')}/>
+         <ButtonEditDashboard TextButton="Seguridad" FontName="lock-closed-outline" Link={()=>navigation.navigate('Security')}/> 
+         <ButtonEditDashboard TextButton="Cerrar sesión" FontName="log-out-outline" Link={()=>navigation.navigate('Logout')}/> 
         </View>
          <View style={styles.nextButton}>
                         {/* <Button text="Start an instant match" Link={handleNavigate} /> */}
@@ -52,12 +53,15 @@ const Setting = ({navigation}) => {
       )
     }
     const styles = StyleSheet.create({
+        ShoeConText:{
+            paddingTop:20
+        },
         rowContainer:{  paddingLeft:20,
         paddingRight:20,},
     
         row: {
             flexDirection: 'row', // Arrange points and text horizontally
-            alignItems: 'center', // Center content vertically
+            alignItems: 'top', // Center content vertically
             gap: 30,
         },
         textPoints: {
@@ -65,12 +69,13 @@ const Setting = ({navigation}) => {
             lineHeight: 24,
             color: '#000',
             marginTop: 10,
-            fontFamily: Fonts.EXTRABOLD,
+            
 
         },
         ShoeCon: {
             textAlign: 'center',
             justifyContent: 'center',
+            width:85
         },
         ShoeContainer: {
             marginTop: 20,
@@ -84,13 +89,13 @@ const Setting = ({navigation}) => {
         buttonContainer:{
             marginTop:30
         },
-        paragraphs: {
-            fontSize:18,
-            color:'black',
+        paragraph: {
+            fontSize:15,
+            color:'#61646B',
             letterSpacing:0.1,
           width:'auto',
-          lineHeight: 36,
-          fontFamily:'WorkSans-Medium'
+
+          fontFamily: 'Satoshi-Medium'
           },
           nextButton: {
             // position: 'absolute',
@@ -103,7 +108,7 @@ const Setting = ({navigation}) => {
             letterSpacing:0.3,
           width:'auto',
           lineHeight: 36,
-          fontFamily:'WorkSans-Medium',
+          fontFamily: 'Satoshi-Medium',
           marginLeft:2,
           marginTop:20
         }

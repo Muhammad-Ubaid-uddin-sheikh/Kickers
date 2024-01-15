@@ -99,7 +99,7 @@ const App = () => {
         keyExtractor={(item) => item.id}
         renderItem={renderTodoItem}
       />
-
+  
       <Modal
         animationType="slide"
         transparent={false}
@@ -192,3 +192,50 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+// import React, { useState } from 'react';
+// import { View, Button, StyleSheet } from 'react-native';
+// import TodoList from './TodoList';
+// import TodoDetails from './TodoItem';
+
+// const App = () => {
+//   const [todos, setTodos] = useState([]);
+//   const [selectedTodo, setSelectedTodo] = useState(null);
+
+//   const handleTodoPress = (todo) => {
+//     setSelectedTodo(todo);
+//   };
+
+//   const handleAddTodo = (newTodo) => {
+//     setTodos([...todos, { id: Date.now(), ...newTodo }]);
+//     setSelectedTodo(null);
+//   };
+
+//   const handleSaveTodo = (updatedTodo) => {
+//     const updatedTodos = todos.map((todo) => (todo.id === selectedTodo.id ? { ...todo, ...updatedTodo } : todo));
+//     setTodos(updatedTodos);
+//     setSelectedTodo(null);
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       {!selectedTodo ? (
+//         <>
+//           <TodoList todos={todos} onTodoPress={handleTodoPress} />
+//           <Button title="Add Todo" onPress={() => setSelectedTodo({})} />
+//         </>
+//       ) : (
+//         <TodoDetails todo={selectedTodo} onSave={selectedTodo ? handleSaveTodo : handleAddTodo} />
+//       )}
+//     </View>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     padding: 20,
+//   },
+// });
+
+// export default App;
+

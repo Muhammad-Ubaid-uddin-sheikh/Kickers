@@ -38,8 +38,7 @@ const CustomizeProfilePrefferd = ({ navigation }) => {
 
                 <View style={styles.MainContainer}>
                     <ColoredLine flex={0} />
-                    <Text style={styles.MainHeading} >What’s your preferred
-                        Jersey number? </Text>
+                    <Text style={styles.MainHeading} >¿Cuál es el número que utilizas?</Text>
                     <View style={styles.ShoeCon}>
 
                         <View style={styles.jerseyNumberContainer}>
@@ -50,7 +49,7 @@ const CustomizeProfilePrefferd = ({ navigation }) => {
                         <View style={styles.inputContainer}>
                             <TextInput
                                 style={styles.input}
-                                placeholder="Enter jersey number"
+                                placeholder="Número de dorsal"
                                 keyboardType="numeric"
                                 placeholderTextColor="rgba(33, 33, 33, 0.60)"
                                 letterSpacing={0.6}
@@ -70,7 +69,7 @@ const CustomizeProfilePrefferd = ({ navigation }) => {
 
                 </View>
                 <View style={styles.nextButton}>
-                    <Button text='Finish' Link={handleNavigate} />
+                    <Button text='Terminar' Link={handleNavigate} />
                 </View>
 
             </View>
@@ -114,7 +113,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         shadowOpacity: 1,
         color: '#212121',
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         backgroundColor: 'rgba(64, 134, 57, 0.05)'
     },
     jerseyNumberContainer: {

@@ -14,16 +14,16 @@ const App = ({ navigation }) => {
                 <StatusBar translucent={true} backgroundColor={'transparent'} />
                 <View style={styles.Widthcontainer}>
 
-                    <Text style={styles.heading}>Get the most of the soccer community near you</Text>
+                    <Text style={styles.heading}>Disfruta al máximo el mundo del fútbol cerca de ti</Text>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('LoginScreen')}>
-                        <Text style={styles.buttonText}>Log In</Text>
+                        <Text style={styles.buttonText}>Inicia sesión</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.button, { backgroundColor: 'white', }]} onPress={() => navigation.navigate('SignupScreen')} >
-                        <Text style={[styles.buttonText, { color: 'black' }]}>Sign Up</Text>
+                        <Text style={[styles.buttonText, { color: 'black' }]}>Registrate</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.linkText}  >
-                        <Text style={styles.informationText}>Are you a court owner?  <Text onPress={() => navigation.navigate('CourtLogin')} style={styles.TextLink}>Click here</Text> </Text>
+                        <Text style={styles.informationText}>¿Eres propietario de una cancha? <Text onPress={() => navigation.navigate('CourtLogin')} style={styles.TextLink}>Haz click aquí</Text> </Text>
                     </TouchableOpacity>
 
                 </View>
@@ -41,14 +41,14 @@ const styles = StyleSheet.create({
         lineHeight: 24,
         color: '#408639',
         fontWeight: '500',
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
     },
     informationText: {
         fontSize: 12,
         lineHeight: 24,
         color: '#61646B',
         textAlign: 'center',
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
     },
     Widthcontainer: {
         width: '100%',
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         width: 345,
         borderColor: '#212121',
         borderWidth: 0.5, // Set the border width
-        fontFamily: 'Work Sans',
+       fontFamily: 'Satoshi-Regular',
 
     },
     buttonText: {
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
         textAlign: 'center',
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'Satoshi-Medium'
     },
     backButton: {
         position: 'absolute',

@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
   Groundname:{
 fontSize:16,
 color:'#61646B',
-fontFamily:'WorkSans-Medium',
+fontFamily: 'Satoshi-Medium',
   },
   DistanceTExt:{
-    fontFamily:'WorkSans-Medium',
+    fontFamily: 'Satoshi-Medium',
     fontSize:14,
     color:'#AFB1B6'
     

@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         backgroundColor: 'white',
         borderRadius: 10,
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         marginLeft:15,
         marginRight: 15,
         width: 370,

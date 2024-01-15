@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 
     },
     mainText: {
-        paddingLeft: 8,
+        paddingLeft: 10,
         color: '#212121',
         fontFamily: Fonts.MEDIUM,
         fontSize: 15,

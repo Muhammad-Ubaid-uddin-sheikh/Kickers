@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         backgroundColor: 'white',
         borderRadius: 10,
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         marginLeft: 20,
         marginRight: 28,
         width: 355,
@@ -48,14 +48,14 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         shadowOpacity: 1,
         color: '#212121',
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         backgroundColor: 'rgba(64, 134, 57, 0.05)'
 
     },
     mainText: {
-        paddingLeft: 8,
+        paddingLeft: 20,
         color: '#212121',
-        fontFamily: 'WorkSans-Regular',
+        fontFamily: 'Satoshi-Medium',
         fontSize: 15
     },
 

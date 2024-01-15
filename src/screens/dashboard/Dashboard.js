@@ -19,7 +19,7 @@ const Dashboard = ({navigation}) => {
         <View style={styles.rowContainer}>
         <StatusBar backgroundColor={'white'} />
         <Text style={styles.paragraphs}>
-        What would you like to do today?
+        ¿Qué te gustaría hacer hoy?
      </Text>
 
      <View style={styles.ShoeContainer}>
@@ -27,28 +27,28 @@ const Dashboard = ({navigation}) => {
                         <View style={styles.ShoeCon}>
                             <View style={styles.imageContainerBorder}>
                             <Image source={require('../../assets/reserveFeild.jpg')} style={{ width: 150, height: 130,objectFit:'contain',marginTop:5  }} /></View>
-                            <Text style={styles.textPoints} >Reserve A Field</Text>
+                            <Text style={styles.textPoints} >Reserva una cancha</Text>
                         </View>
                         <View style={styles.ShoeCon}>
                         <View style={styles.imageContainerBorder}>
                             <Image source={require('../../assets/findMatch.jpg')} style={{ width: 150, height: 130,objectFit:'contain',marginBottom:5 }} /></View>
-                            <Text style={styles.textPoints} >Find A Match</Text>
+                            <Text style={styles.textPoints} >Encuentra un partido</Text>
                         </View>
                     </View>
 
                 </View>
                 <Text style={styles.paragraphsHeading}>
-                Matches happening near you 
+                Partidos ocurriendo cerca de ti
      </Text>
      </View>
      <View ><VerticalSlider/></View>
 <View style={styles.buttonContainer}>
-    <ButtonEditDashboard Link={handlePrefrences} TextButton="Customize your preferences" FontName="football-outline"/>
-    <CheckPlayer NameFont="signal-cellular-outline" TextButton="Check Player Leaderboard" />
+    <ButtonEditDashboard Link={handlePrefrences} TextButton="Ajusta tus preferencia s" FontName="football-outline"/>
+    <CheckPlayer NameFont="signal-cellular-outline" TextButton="Consultar la tabla de clasificación de jugadores" />
    
     </View>
      <View style={styles.nextButton}>
-                    <Button text="Start an instant match" Link={handleNavigate} />
+                    <Button text="Comenzar un partido" Link={handleNavigate} />
                 </View>
     </View>
     </ScrollView>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         letterSpacing:0.1,
       width:'auto',
       lineHeight: 36,
-      fontFamily:'WorkSans-Medium'
+      fontFamily: 'Satoshi-Medium'
       },
       nextButton: {
         // position: 'absolute',
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         letterSpacing:0.3,
       width:'auto',
       lineHeight: 36,
-      fontFamily:'WorkSans-Medium',
+      fontFamily: 'Satoshi-Medium',
       marginLeft:2,
       marginTop:20
     }
