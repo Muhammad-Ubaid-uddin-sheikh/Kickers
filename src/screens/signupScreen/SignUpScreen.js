@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Image, StatusBar, } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Image, StatusBar,Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import Icons from 'react-native-vector-icons/FontAwesome6'
 import NewIcons from 'react-native-vector-icons/Fontisto'
@@ -8,31 +8,46 @@ import FaIcon from 'react-native-vector-icons/MaterialIcons'
 import Button from '../../components/Button';
 import { Fonts } from '../style';
 import axios from 'axios';
+  const API_URL = 'http://192.168.100.5:5000/register';
 const Sigup = ({ navigation }) => {
-
+  
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
     const [Feildpassword, setFeildpassword] = useState('');
 
-
-    const handleNavigate = () => {
-       
-       
-        // navigation.navigate('CustomizeProfile');
-
-        const userdata= {
-            name: name,
+    const handleNavigate = async () => {
+        try {
+          // Check if any field is empty
+          if (!name || !email || !mobileNumber || !Feildpassword) {
+            Alert.alert('All fields are required');
+            
+            return;
+          }
+    
+          // Make a POST request to your backend with form data
+          const response = await axios.post(API_URL, {
+            name,
             email,
             mobileNumber,
-            Feildpassword
-        };
-        axios.post("http://192.168.100.5:5001/register",userdata)
-        .then(res =>console.log(res.data))
-        .catch(e => console.log(e))
+            Feildpassword,
+          });
+    
+          // Handle the response from the server
+          if (response.data.success) {
+            Alert.alert('Registration successful!');
+            navigation.navigate('CustomizeProfile')
+            // You can navigate to another screen or perform any other action here
+          } else {
+            Alert.alert('Registration failed. Please try again.');
+          }
+        } catch (error) {
+          console.error(error);
+          Alert.alert('An error occurred. Please try again later.');
+        }
+      };
+    
 
-       
-    }
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
 
@@ -105,7 +120,7 @@ const Sigup = ({ navigation }) => {
                     value={mobileNumber}
         onChangeText={(text) => setMobileNumber(text)}
                 />
-                <Icons name='check' style={styles.eyeIcon} size={17} />
+                
             </View>
             <View style={styles.inputContainer}>
 
@@ -156,7 +171,11 @@ const Sigup = ({ navigation }) => {
                     <Text style={styles.eyeText}>{isRePasswordVisible ? <Icon name="eye" style={styles.eyeIcon} size={17} /> : <Icon name="eye-slash" style={styles.eyeIcon} size={17} />}</Text>
                 </TouchableOpacity>
             </View>
-            <Button text="Registrate " Link={() => handleNavigate()} />
+            <Button text="Registrate " 
+            Link={handleNavigate} 
+            // Link={()=>navigation.navigate('CustomizeProfile')
+        
+            />
 
             <Text style={styles.informationText}>Al registrarte aceptas nuestros <Text style={{ color: '#408639' }}>términos y condiciones</Text></Text>
             <View style={styles.SinupText}>

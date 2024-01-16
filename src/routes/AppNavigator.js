@@ -25,7 +25,6 @@ import Shadule from '../screens/courtScreenDashboard/ShaduleRevisa'
 import EditProfile from '../screens/setting/EditarPerfil'
 import Pago from '../screens/setting/Pago'
 import Notification from '../screens/setting/Notification'
-import Logout from '../screens/setting/Logout'
 import Privacy from '../screens/setting/Privacy'
 import Security from '../screens/setting/Security'
 
@@ -68,10 +67,6 @@ const navigation= useNavigation()
           fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
         },
       }} name="Notification" component={Notification} />
-      <Stack.Screen options={{ title: ' Notification', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
-        },
-      }} name="Logout" component={Logout} />
       <Stack.Screen options={{ title: 'Logout', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
           fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
         },
@@ -80,7 +75,7 @@ const navigation= useNavigation()
           fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
         },
       }} name="Security" component={Security} />
-      <Stack.Screen options={{ title: 'Security', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
+      <Stack.Screen options={{ title: 'Editar perfil', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
           fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
         },
       }} name="EditProfile" component={EditProfile} />

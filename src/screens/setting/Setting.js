@@ -1,10 +1,30 @@
-import React from 'react';
-import { Text, View, StatusBar, StyleSheet, Image, ScrollView} from 'react-native'
-// import VerticalSlider from './VerticalSlides';
+import React, { useState } from 'react';
+import { Text, View, StatusBar, StyleSheet, ScrollView,} from 'react-native'
+
 import CheckPlayer from '../../components/CustomButton'
 import ButtonEditDashboard from '../../components/ButtonEditDashboard'
 import ImageEdit from './ImageEdit'
+import Modal from 'react-native-modal';
+import Button from '../../components/ButtonTransparentBlack';
 const Setting = ({navigation}) => {
+
+const [isLogoutModalVisible, setLogoutModalVisible] = useState(false);
+
+  const showLogoutModal = () => {
+    setLogoutModalVisible(true);
+  };
+
+  const hideLogoutModal = () => {
+    setLogoutModalVisible(false);
+  };
+
+  const handleLogout = () => {
+
+    hideLogoutModal();
+    navigation.navigate('LoginScreen')
+    alert('User logged out successfully');
+   
+  };
   return (
 
         <ScrollView backgroundColor={'white'}>
@@ -28,31 +48,67 @@ const Setting = ({navigation}) => {
                         </View>
                         
                     </View>
-                    {/* <Text style={styles.paragraphsHeading}>
-                    Matches happening near you 
-         </Text> */}
+                   
          </View>
     <View style={styles.buttonContainer}>
-        {/* <ButtonEditDashboard Link={handlePrefrences} /> */}
+       
         <ButtonEditDashboard TextButton="Editar perfil" FontName="person-outline" Link={()=>navigation.navigate('EditProfile')}/>
         <ButtonEditDashboard TextButton="Pago" FontName="card-outline" Link={()=>navigation.navigate('Pago')}/>
-        {/* <CheckPlayer NameFont="log-out-outline" TextButton="Check Player Leaderboardsss" /> */}
-        {/* <ButtonEditDashboard TextButton="Check Player Leaderboard" FontName="log-out-outline"/> */}
-        {/* {/* <CheckPlayer NameFont="bell" TextButton="Check Player Leaderboard" /> */}
-        {/* <CheckPlayer NameFont="log-out-outline" TextButton="Check Player Leaderboard" /> */}
         <CheckPlayer NameFont="bell-outline" TextButton="Notificaciones" Link={()=>navigation.navigate('Notification')} />
         <ButtonEditDashboard TextButton="Privacidad" FontName="shield-checkmark-outline" Link={()=>navigation.navigate('Privacy')}/>
          <ButtonEditDashboard TextButton="Seguridad" FontName="lock-closed-outline" Link={()=>navigation.navigate('Security')}/> 
-         <ButtonEditDashboard TextButton="Cerrar sesión" FontName="log-out-outline" Link={()=>navigation.navigate('Logout')}/> 
+         <View>
+         <ButtonEditDashboard TextButton="Cerrar sesión" FontName="log-out-outline" Link={showLogoutModal}/> 
+         
+        <Modal
+        isVisible={isLogoutModalVisible}
+        animationIn="slideInUp"
+        animationOut="slideOutDown"
+        onBackdropPress={hideLogoutModal}
+        onBackButtonPress={hideLogoutModal}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.paragraphsHeadingMain}>¿Quieres cerrar sesión?</Text>
+            <Text style={styles.paragraphspoup}>Agradecem os tu visita. Nos vemos pronto.</Text>
+
+            <View style={styles.containerButton}>
+            <View style={styles.mainContent}> 
+                <Button text="Cancelar"  ColorIcon="white" Link={hideLogoutModal} ColorText="#212121" />
+                </View>
+            <View style={styles.mainContent} >
+                 <Button text="Cerrar sesión"  Link={handleLogout} />
+                 </View>
+            
+                </View>
+              
+          </View>
+        </View>
+      </Modal>
+         </View>
+        
         </View>
          <View style={styles.nextButton}>
-                        {/* <Button text="Start an instant match" Link={handleNavigate} /> */}
+                     
                     </View>
         </View>
         </ScrollView>
       )
     }
     const styles = StyleSheet.create({
+        containerButton:{// Arrange points and text horizontally
+            alignItems: 'center', // Center content vertically
+            justifyContent:'space-between',
+            width:'auto',
+            position:'relative',
+            flexDirection: 'row',
+            gap:10
+        },
+        mainContent: {
+            textAlign: 'center',
+        justifyContent: 'center',
+       width:'auto',
+          },
         ShoeConText:{
             paddingTop:20
         },
@@ -97,6 +153,25 @@ const Setting = ({navigation}) => {
 
           fontFamily: 'Satoshi-Medium'
           },
+          paragraphspoup:{
+            fontSize:14,
+            color:'#424242',
+            letterSpacing:0.1,
+            fontFamily: 'Satoshi-Medium',
+            paddingTop:18,
+            paddingBottom:10,
+            textAlign:"left",
+            width:300,
+          },
+          paragraphsHeadingMain:{
+            fontSize:20,
+            color:'black',
+            letterSpacing:0.1,
+            fontFamily: 'Satoshi-Medium',
+            fontWeight:'bold',
+            textAlign:"left",
+            width:300,
+          },
           nextButton: {
             // position: 'absolute',
             // bottom: -20,
@@ -111,7 +186,28 @@ const Setting = ({navigation}) => {
           fontFamily: 'Satoshi-Medium',
           marginLeft:2,
           marginTop:20
-        }
+        },  
+        buttonText: {
+            fontSize: 18,
+            color: 'blue',
+            textDecorationLine: 'underline',
+          },
+          modalContainer: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            width:'auto',
+            
+
+        
+          },
+          modalContent: {
+            backgroundColor: 'white',
+            padding: 25,
+            borderRadius: 20,
+            alignItems: 'center',
+            
+          },
     })
 
 

@@ -6,7 +6,7 @@ import { Fonts } from '../style';
 const App = ({navigation}) => {
 
   const handleNavigate = () => {
-      navigation.navigate('CustomizeProfile');  }
+      navigation.navigate('Dashboard');  }
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
 
