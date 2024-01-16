@@ -27,6 +27,7 @@ import Pago from '../screens/setting/Pago'
 import Notification from '../screens/setting/Notification'
 import Privacy from '../screens/setting/Privacy'
 import Security from '../screens/setting/Security'
+import { Fonts } from '../screens/style';
 
 const AppNavigator = () => {
 
@@ -59,24 +60,24 @@ const navigation= useNavigation()
       <Stack.Screen options={{ headerShown: false }} name="CourtLogin" component={CourtLogin} />
       <Stack.Screen options={{ headerShown: false }} name="SignupScreen" component={SignupScreen} />
       <Stack.Screen options={{ headerShown: false }} name="CourtSingup" component={CourtSingup} />
-      <Stack.Screen options={{ title: 'EditProfile', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+      <Stack.Screen options={{ title: 'Editar perfil', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="Pago" component={Pago} />
 <Stack.Screen options={{ title: 'Pago', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily:Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="Notification" component={Notification} />
       <Stack.Screen options={{ title: 'Logout', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="Privacy" component={Privacy } />
       <Stack.Screen options={{ title: 'Privacy', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="Security" component={Security} />
       <Stack.Screen options={{ title: 'Editar perfil', headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="EditProfile" component={EditProfile} />
 
@@ -85,25 +86,25 @@ const navigation= useNavigation()
         title: 'Perfil del jugador',
 
         headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="CustomizeProfile" component={CustomizeProfile} />
       <Stack.Screen options={{
         title: 'Perfil del jugador',
         headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="CustomizeProfileFoot" component={CustomizeProfileFoot} />
       <Stack.Screen options={{
         title: 'Perfil del jugador',
         headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="CustomizeProfileNationlity" component={CustomizeProfileNationlity} />
       <Stack.Screen options={{
         title: 'Perfil del jugador',
         headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="CustomizeProfilePrefferd" component={CustomizeProfilePrefferd} />
       <Stack.Screen options={{ headerLeft: null,
@@ -128,7 +129,7 @@ const navigation= useNavigation()
       ),
         title: 'Hola, Jake',
         headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 'bold', color: 'rgba(0, 0, 0, 1)', fontSize: 27,fontFamily: 'Satoshi-Medium', marginLeft: 0 // You can customize the style further
+           color: 'rgba(0, 0, 0, 1)', fontSize: 27,fontFamily: Fonts.BOLD, marginLeft: 0 // You can customize the style further
         },
       }}  name="Dashboard" component={Dashboard} />
       <Stack.Screen options={{
@@ -155,14 +156,14 @@ const navigation= useNavigation()
 
         title: 'Start A Game',
         headerTintColor: '#408639', headerTitleStyle: {
-          color: 'black', fontSize: 20,fontFamily: 'Satoshi-Medium',fontWeight: 600, // You can customize the style further
+          color: 'black', fontSize: 20,fontFamily: Fonts.MEDIUM,fontWeight: 600, // You can customize the style further
         },
       }} name="FindGames" component={FindGames} />
       <Stack.Screen options={{ headerShown: false }} name="ParticularGroundScreen" component={ParticularGroundScreen} />
       <Stack.Screen options={{
         title: 'Ajustes',
         headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20 // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20 // You can customize the style further
         },
       }} name="Setting" component={Setting} />
 
@@ -170,7 +171,7 @@ const navigation= useNavigation()
 <Stack.Screen options={{
         title: 'Horario',
         headerTitleAlign: 'start', headerTintColor: '#408639', headerTitleStyle: {
-          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: 'Satoshi-Medium', marginLeft: -20, // You can customize the style further
+          fontWeight: 400, color: 'rgba(0, 0, 0, 1)', fontSize: 18,fontFamily: Fonts.MEDIUM, marginLeft: -20, // You can customize the style further
         },
       }} name="Shadule" component={Shadule} />
     </Stack.Navigator>

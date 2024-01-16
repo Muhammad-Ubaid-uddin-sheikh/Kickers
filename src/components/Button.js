@@ -2,6 +2,7 @@ import React from 'react'
 import { Text, View ,StyleSheet, TouchableOpacity} from 'react-native'
 import Icons from 'react-native-vector-icons/MaterialIcons'
 import { useNavigation } from '@react-navigation/native';
+import { Fonts } from '../screens/style';
 export const Button = ({text,Link}) => {
     const navigation = useNavigation()
   return (
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     borderRadius:12,
     borderColor:'#212121',
     borderWidth: 0.5, // Set the border width
-    fontFamily:'WorkSans-Regular',
+    fontFamily:Fonts.MEDIUM,
     marginLeft:20,
     marginRight:28,
     width:345,
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
       buttonText:{
         paddingLeft:5,
         color: '#EFEFF0',
-        fontFamily:'WorkSans-Regular'
+        fontFamily:Fonts.MEDIUM,
       },
       eyeIconButoon:{
         position: 'absolute',

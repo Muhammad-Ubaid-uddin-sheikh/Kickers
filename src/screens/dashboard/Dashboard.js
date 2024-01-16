@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         letterSpacing:0.1,
       width:'auto',
       lineHeight: 36,
-      fontFamily: 'Satoshi-Medium'
+      fontFamily:Fonts.MEDIUM,
       },
       nextButton: {
         // position: 'absolute',
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         letterSpacing:0.3,
       width:'auto',
       lineHeight: 36,
-      fontFamily: 'Satoshi-Medium',
+      fontFamily:Fonts.MEDIUM,
       marginLeft:2,
       marginTop:20
     }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, StyleSheet,ScrollView, FlatList } from 'react-native';
 import PlayerData from './PlayerData';
+import { Fonts } from '../screens/style';
 
 const YourComponent = () => {
  
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     color: '#909090',
     fontSize: 12,
     letterSpacing:0.2,
-    fontFamily: 'Satoshi-Medium',
+    fontFamily:Fonts.MEDIUM,
   },
   containerThird:{
 borderTopWidth: 1,
@@ -118,7 +119,7 @@ letterSpacing:0.2,
   
     fontSize: 14,
     color:'#474747',
-    fontFamily: 'Satoshi-Medium',
+    fontFamily:Fonts.MEDIUM,
     // paddingTop:8,
     paddingLeft:10,
       paddingRight:15,
@@ -133,7 +134,7 @@ letterSpacing:0.2,
     marginBottom: 15,
     color:'#959595',
     letterSpacing:0.5,
-    fontFamily: 'Satoshi-Medium',
+    fontFamily:Fonts.MEDIUM,
     paddingLeft:10,
       paddingRight:15,
       // paddingLeft:5,

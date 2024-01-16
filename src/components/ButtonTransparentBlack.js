@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, View ,StyleSheet, TouchableOpacity} from 'react-native'
+import { Fonts } from '../screens/style'
 export const Button = ({text,Link,ColorIcon,ColorText}) => {
   
     const ButtonStyle={
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     borderRadius:12,
     borderColor:'#212121',
     borderWidth: 1.5, // Set the border width
-    fontFamily:'WorkSans-Regular',
+    fontFamily:Fonts.MEDIUM,
     // marginLeft:20,
     // marginRight:28,
     width:150,
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
       buttonText:{
         // paddingLeft:5,
         // color: '#EFEFF0',
-        fontFamily:'WorkSans-Regular',
+        fontFamily:Fonts.MEDIUM,
         textAlign:'center'
       },
     

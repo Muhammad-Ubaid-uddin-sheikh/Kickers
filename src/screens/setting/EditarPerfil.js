@@ -1,12 +1,14 @@
 
-import React, {  useState } from 'react';
-import { View, TextInput, Text, StyleSheet, ScrollView, Image, StatusBar, Alert } from 'react-native';
+import React, { useState } from 'react';
+import { View, TextInput, Text, StyleSheet, ScrollView, Image, StatusBar, Alert, KeyboardAvoidingView } from 'react-native';
 import NewIcons from 'react-native-vector-icons/Fontisto'
-import Button from '../../components/Button';
-import RNPickerSelect from 'react-native-picker-select';
+import Positon from './positon'
 import axios from 'axios';
+import Foot from './Foot'
+
+// import PhoneInput from 'react-native-phone-input'
 const pickerSelectStyles = StyleSheet.create({
-  
+
   inputAndroid: {
     marginTop: 12,
     paddingLeft: 12,
@@ -26,24 +28,24 @@ const pickerSelectStyles = StyleSheet.create({
     backgroundColor: 'rgba(64, 134, 57, 0.05)'
   },
 });
-  
+
 const API_URL = 'http://192.168.100.5:5000/register';
 const Sigup = ({ navigation }) => {
-  
+
   const placeholder = {
     label: 'Posición',
     value: null,
-    placeholderTextColor:"rgba(33, 33, 33, 0.60)",
-    
-  
+    placeholderTextColor: "rgba(33, 33, 33, 0.60)",
+
+
   };
-  const placeholderLeft ={
+  const placeholderLeft = {
     label: 'Pie dominante',
     value: null,
-    placeholderTextColor:"rgba(33, 33, 33, 0.60)",
-    
+    placeholderTextColor: "rgba(33, 33, 33, 0.60)",
+
   }
- 
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
@@ -114,9 +116,10 @@ const Sigup = ({ navigation }) => {
   };
 
   return (
+
     <ScrollView style={styles.form} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
 
-     
+
 
       <View style={styles.inputContainer}>
         <TextInput
@@ -197,6 +200,8 @@ const Sigup = ({ navigation }) => {
         />
 
       </View>
+     
+    
       {/* <PhoneInput
                 ref={(ref) => { this.phone = ref; }}
                 onPressFlag={this.onPressFlag}
@@ -206,70 +211,35 @@ const Sigup = ({ navigation }) => {
                     placeholder: 'Enter a phone number...'
                 }}
             /> */}
-            {/* <PhoneInput ref='phone'/> */}
-   
-       <View style={styles.inputContainer}>
-       
-           <RNPickerSelect
-           placeholder={placeholder}
-           style={pickerSelectStyles}
-           useNativeAndroidPickerStyle={false}
-            onValueChange={(value) => console.log(value)}
-            items={[
-                { label: 'Delantero', value: 'Delantero' },
-                { label: 'Defensa', value: 'Defensa' },
-                { label: 'Medio', value: 'Medio' },
-                { label: 'Portero', value: 'Portero' },
-            ]}
-            
-        />
-         <NewIcons name='angle-down' style={styles.eyeIcon} size={17} />
-</View>
-<View style={styles.inputContainer}>
-       
-       <RNPickerSelect
-       placeholder={placeholderLeft}
-       style={pickerSelectStyles}
-       useNativeAndroidPickerStyle={false}
-        onValueChange={(value) => console.log(value)}
-        items={[
-            { label: 'Zurdo', value: 'Zurdo' },
-            { label: 'Diestro', value: 'Diestro' },
-            
-        ]}
-        
-    />
-     <NewIcons name='angle-down' style={styles.eyeIcon} size={17} />
-</View>
-      
-      {/* <Button text="Registrate "
-        Link={handleNavigate}
-     
+      {/* <PhoneInput ref='phone'/> */}
 
-      /> */}
+      <View style={styles.inputContainer}>
+        <Positon />
+      </View>
+      <View style={styles.inputContainer}>
+        <Foot />
+      </View>
+  
 
-     
     </ScrollView>
+
+
   );
 };
 
 const styles = StyleSheet.create({
- 
+  container: {
+    flex: 1,
+  },
+
+
   form: {
     backgroundColor: '#fff',
-    display: 'flex',
-    width: 'auto',
-    borderRadius: 8,
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
-    shadowOffset: { width: 0, height: 10 },
-    shadowRadius: 15,
-    shadowOpacity: 1,
+    flex: 1,
     position: 'relative',
-    paddingTop: 20,
-
-
+    paddingTop: 10,
   },
- 
+
   paragraphs: {
     textAlign: 'center',
     marginBottom: 20,
@@ -317,11 +287,11 @@ const styles = StyleSheet.create({
     top: 35,
     color: '#408639'
   },
- 
+
   eyeText: {
     fontSize: 20,
   },
-  
+
 });
 
 export default Sigup;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
+import { Fonts } from '../screens/style'
 
 const AvatarPlayer = ({name,rank,image}) => {
   return (
@@ -29,14 +30,14 @@ const styles = StyleSheet.create({
         color:'#959595',
         letterSpacing:0.2,
         textAlign:'center',
-        fontFamily: 'Satoshi-Medium',
+        fontFamily: Fonts.MEDIUM,
       },
       avatarNameEDit:{
         fontSize:8,
         color:'#414141',
         letterSpacing:0.2,
         textAlign:'center',
-        fontFamily: 'Satoshi-Medium',
+        fontFamily: Fonts.MEDIUM,
       }
 })
 export default AvatarPlayer

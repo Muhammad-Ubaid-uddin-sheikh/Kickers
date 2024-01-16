@@ -1,6 +1,6 @@
 export  const Fonts={
     BOLD: 'Satoshi-Bold',
-    MEDIUM:'Satoshi-Light',
+    MEDIUM:'Satoshi-Medium',
     EXTRABOLD:'Satoshi-Variable',
-    SAMIBOLD:'Satoshi-Regular',
+    REGULAR:'Satoshi-Regular',
 }

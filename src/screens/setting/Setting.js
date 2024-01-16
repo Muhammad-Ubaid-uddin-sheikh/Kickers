@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Text, View, StatusBar, StyleSheet, ScrollView,} from 'react-native'
-
+import Spinner from 'react-native-loading-spinner-overlay';
 import CheckPlayer from '../../components/CustomButton'
 import ButtonEditDashboard from '../../components/ButtonEditDashboard'
 import ImageEdit from './ImageEdit'
 import Modal from 'react-native-modal';
 import Button from '../../components/ButtonTransparentBlack';
+import { Fonts } from '../style';
 const Setting = ({navigation}) => {
-
+    const [isLoggingOut, setIsLoggingOut] = useState(false);
 const [isLogoutModalVisible, setLogoutModalVisible] = useState(false);
 
   const showLogoutModal = () => {
@@ -19,10 +20,17 @@ const [isLogoutModalVisible, setLogoutModalVisible] = useState(false);
   };
 
   const handleLogout = () => {
+    setIsLoggingOut(true);
 
+    setTimeout(() => {
+      // Hide spinner
+      setIsLoggingOut(false);
+
+
+      navigation.navigate('LoginScreen')
+    }, 500);
     hideLogoutModal();
-    navigation.navigate('LoginScreen')
-    alert('User logged out successfully');
+   
    
   };
   return (
@@ -78,6 +86,14 @@ const [isLogoutModalVisible, setLogoutModalVisible] = useState(false);
                 </View>
             <View style={styles.mainContent} >
                  <Button text="Cerrar sesión"  Link={handleLogout} />
+                 <Spinner
+        visible={isLoggingOut}
+        textContent={'Logging out...'}
+        textStyle={styles.loaderText}
+        animation="fade"
+        overlayColor="rgba(0, 0, 0, 0.7)"
+        color="white" 
+      />
                  </View>
             
                 </View>
@@ -96,6 +112,10 @@ const [isLogoutModalVisible, setLogoutModalVisible] = useState(false);
       )
     }
     const styles = StyleSheet.create({
+        loaderText:{
+            color:'white',
+            fontFamily:Fonts.BOLD
+        },
         containerButton:{// Arrange points and text horizontally
             alignItems: 'center', // Center content vertically
             justifyContent:'space-between',

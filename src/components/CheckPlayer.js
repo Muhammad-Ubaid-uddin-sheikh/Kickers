@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, } from 'react-native'
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
+import { Fonts } from '../screens/style'
 export const Button = ({ Link }) => {
     return (
 
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         backgroundColor: 'white',
         borderRadius: 10,
-        fontFamily: 'Satoshi-Medium',
+        fontFamily:Fonts.MEDIUM,
         marginLeft: 20,
         marginRight: 28,
         width: 355,
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         shadowOpacity: 1,
         color: '#212121',
-        fontFamily: 'Satoshi-Medium',
+        fontFamily:Fonts.MEDIUM,
         backgroundColor: 'rgba(64, 134, 57, 0.05)'
 
     },

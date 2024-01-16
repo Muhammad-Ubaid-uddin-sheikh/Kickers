@@ -246,15 +246,9 @@ const styles = StyleSheet.create({
     },
     form: {
         backgroundColor: '#fff',
-        display: 'flex',
-        width: 'auto',
-        borderRadius: 8,
-        shadowColor: 'rgba(0, 0, 0, 0.1)',
-        shadowOffset: { width: 0, height: 10 },
-        shadowRadius: 15,
-        shadowOpacity: 1,
-        position: 'relative',
-        paddingTop: 20,
+        flex:1,
+         position: 'relative',
+         paddingTop: 15,
 
 
     },

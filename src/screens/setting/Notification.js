@@ -1,6 +1,5 @@
 import React from 'react'
 import { View ,Text,ScrollView,StyleSheet,} from 'react-native'
-
 const Notificaciones= () => {
   return (
     <ScrollView backgroundColor={'white'}>
@@ -9,7 +8,7 @@ const Notificaciones= () => {
 Notificaciones
         </Text>
     </View>
-    </ScrollView>
+     </ScrollView>
   )
 }
 const styles = StyleSheet.create({

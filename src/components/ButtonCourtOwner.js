@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderRadius:12,
     borderColor:'rgba(64, 134, 57, 0.05)',
     borderWidth: 0.5, // Set the border width
-    fontFamily:"Satoshi-Italic",
+    fontFamily:Fonts.MEDIUM,
     marginLeft:15,
     marginRight:15,
     width:355,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
       buttonText:{
         paddingLeft:5,
         color: 'black',
-        fontFamily:Fonts.BOLD,
+        fontFamily:Fonts.MEDIUM,
         letterSpacing:0.5,
         fontSize:15
       },
